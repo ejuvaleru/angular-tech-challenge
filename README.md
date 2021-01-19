@@ -18,6 +18,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 | Switch between languages                            |    ✅    |
 | Dummy Header and Footer                             |    ✅    |
 
+The top selling products have a 📈 emoji, and the international products have a 🌎 emoji. International products are displayed when a user change his location.
+
 ## Review the app
 You can take a look at the app in this [link](https://amasohn-challenge.web.app/)
 
