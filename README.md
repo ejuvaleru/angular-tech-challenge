@@ -14,11 +14,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 | Search products by its name                         |    ✅    |
 | Product details view                                |    ✅    |
 | Switch between country products                     |    ✅    |
-| Order products by Lowest, Highes and best selling   |    ✅    |
+| Order products by price and best selling            |    ✅    |
 | Switch between languages                            |    ✅    |
 | Dummy Header and Footer                             |    ✅    |
 
-The top selling products have a 📈 emoji, and the international products have a 🌎 emoji. International products are displayed when a user change his location.
+The top selling products have a 📈 emoji, which mean that only products with that emoji should be displayed when the user filters by top products, and the international products have a 🌎 emoji. International products are displayed when a user change the the default location of the app.
 
 ## Review the app
 You can take a look at the app in this [link](https://amasohn-challenge.web.app/)
