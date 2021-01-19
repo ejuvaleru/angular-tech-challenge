@@ -1,0 +1,66 @@
+{
+    "PAGES": {
+        "HOME": {
+            "filter-title": "Filtrar",
+            "no-records": "Sin resultados.",
+            "category": {
+                "title": "Categorias",
+                "options": {
+                    "all": "Todos los productos",
+                    "electronics": "Electrónicos",
+                    "jewelery": "Joyería",
+                    "man": "Ropa para Hombre",
+                    "women": "Ropa para Mujer"
+                }
+            },
+            "order": {
+                "title": "Ordenar por",
+                "options": {
+                    "default": "Por defecto",
+                    "lower": "Menor costo",
+                    "higher": "Mayor costo",
+                    "best": "Top ventas"
+                }
+            },
+            "search-bar": "Intente SSD...",
+            "reset-btn": "Limpiar"
+        },
+        "PRODUCT-DETAILS": {
+            "go-back-btn": "Regresar",
+            "buy-btn": "COMPRAR",
+            "add-to-cart-btn": "Agregar al carrito",
+            "may-like": "También podría gustarle"
+        }
+    },
+    "COMPONENTS": {
+        "NAVBAR": {
+            "title": "Tienda Amasohn",
+            "home": "Inicio",
+            "language-selector": {
+                "select-language": "Cambiar idioma",
+                "en": "Inglés",
+                "es": "Español"
+            },
+            "country-selector": {
+                "select-country": "Cambiar ubicación",
+                "usa": "Estados Unidos",
+                "local": "Internacional"
+            }
+        },
+        "FOOTER": {
+            "home": "Inicio",
+            "privacy": "Política de Privacidad",
+            "conditions": "Términos y Condiciones",
+            "support": "Soporte",
+            "contact": "Contacto",
+            "copy": "Derechos Reservados"
+        },
+        "PRODUCT-CART": {
+            "more-btn": "Detalles"
+        },
+        "COUNTRY-POPUP": {
+            "content": "Hey, hemos notado que te encuentras en {{country}}, actualiza tu ubicación para ver nuestros productos internacionales. \nSi ignora este mensaje su ubicación será Estados Unidos por defecto.",
+            "close-btn": "Cerrar"
+        }
+    }
+}

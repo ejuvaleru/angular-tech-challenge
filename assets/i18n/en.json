@@ -1,0 +1,66 @@
+{
+    "PAGES": {
+        "HOME": {
+            "filter-title": "Filter Options",
+            "no-records": "No records found.",
+            "category": {
+                "title": "Categories",
+                "options": {
+                    "all": "All products",
+                    "electronics": "Electronics",
+                    "jewelery": "Jewelery",
+                    "man": "Man Clothing",
+                    "women": "Women Clothing"
+                }
+            },
+            "order": {
+                "title": "Order by",
+                "options": {
+                    "default": "Default sorting",
+                    "lower": "Lower price",
+                    "higher": "Higher price",
+                    "best": "Best selling"
+                }
+            },
+            "search-bar": "Try SSD",
+            "reset-btn": "Reset"
+        },
+        "PRODUCT-DETAILS": {
+            "go-back-btn": "Go back",
+            "buy-btn": "BUY NOW",
+            "add-to-cart-btn": "Add to cart",
+            "may-like": "May also like you"
+        }
+    },
+    "COMPONENTS": {
+        "NAVBAR": {
+            "title": "Amasohn Store",
+            "home": "Home",
+            "language-selector": {
+                "select-language": "Select language",
+                "en": "English",
+                "es": "Spanish"
+            },
+            "country-selector": {
+                "select-country": "Change location",
+                "usa": "United States",
+                "local": "International"
+            }
+        },
+        "FOOTER": {
+            "home": "Home",
+            "privacy": "Privacy Policy",
+            "conditions": "Termns And Coditions",
+            "support": "Support",
+            "contact": "Contact",
+            "copy": "Copyright"
+        },
+        "PRODUCT-CART": {
+            "more-btn": "Details"
+        },
+        "COUNTRY-POPUP": {
+            "content": "Hey, we noticed that you are in {{country}}, change your location to see our international products. \nIf you pass away this message your default location will be United States.",
+            "close-btn": "Close"
+        }
+    }
+}
