@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { NgbModal, ModalDismissReasons, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
+import { LanguageService } from './core/services/language.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'amasohn';
+
+  constructor(
+    private languageService: LanguageService
+  ){
+    this.languageService.setInitialAppLanguage();
+  }
+  
 }

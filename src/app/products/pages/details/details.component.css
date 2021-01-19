@@ -1,0 +1,18 @@
+.section {
+    min-height: 100vh;
+}
+
+.product-image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-image{
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .product-image {
+        max-height: 350px;
+    }
+  }

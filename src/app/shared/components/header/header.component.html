@@ -1,0 +1,45 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">{{'COMPONENTS.NAVBAR.title' | translate}}</a>
+        <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+            &#9776;
+        </button>
+
+        <div [ngbCollapse]="isMenuCollapsed" class="navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/" (click)="isMenuCollapsed = true">{{'COMPONENTS.NAVBAR.home' |
+                        translate}} <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <div ngbDropdown class="d-inline-block btn-block">
+                        <button class="btn btn-outline-info btn-block" id="dropdownBasic1"
+                            ngbDropdownToggle>{{'COMPONENTS.NAVBAR.language-selector.select-language' | translate}}
+                            🌐</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                            <button ngbDropdownItem
+                                (click)="changeLangage('en')">{{'COMPONENTS.NAVBAR.language-selector.en' | translate}}
+                            </button>
+                            <button ngbDropdownItem
+                                (click)="changeLangage('es')">{{'COMPONENTS.NAVBAR.language-selector.es' |
+                                translate}}</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item ml-lg-2">
+                    <div ngbDropdown class="d-inline-block btn-block">
+                        <button class="btn btn-outline-info location-btn btn-block" id="dropdownBasic1"
+                            ngbDropdownToggle> Change Location 🗺️ | {{defaultLocation}}</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                            <button ngbDropdownItem
+                                (click)="onChangeLocation('United States')"> USA
+                            </button>
+                            <button ngbDropdownItem
+                                (click)="onChangeLocation(userCountry)"> {{userCountry}} / International</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

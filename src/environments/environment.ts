@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  products_api: 'https://fakestoreapi.com',
+  geocoding: {
+    api_key: 'b750f485b47fbc5ffba8510ac800942d',
+    url: 'http://api.positionstack.com/v1/reverse'
+  }
 };
 
 /*

@@ -1,0 +1,47 @@
+<div class="container py-4 filter-container">
+    <h3>{{'PAGES.HOME.filter-title' | translate}}</h3>
+
+    <div class="row">
+        <div class="col-lg-8 col-md-12 col-sm-12">
+            <div class="form-group">
+                <label for="categoriesSelect">{{'PAGES.HOME.category.title' | translate}}: </label>
+                <select class="form-control custom-select mr-md-3 ml-md-2" [(ngModel)]="categoryOptionSelected"
+                    (ngModelChange)="onSelectCategoryOption($event)" id="categoriesSelect">
+                    <option selected value="all">{{'PAGES.HOME.category.options.all' | translate}}</option>
+                    <option value="electronics">{{'PAGES.HOME.category.options.electronics' | translate}}</option>
+                    <option value="jewelery">{{'PAGES.HOME.category.options.jewelery' | translate}}</option>
+                    <option value="men clothing">{{'PAGES.HOME.category.options.man' | translate}}</option>
+                    <option value="women clothing">{{'PAGES.HOME.category.options.women' | translate}}</option>
+                </select>
+                <label for="sortingSelect">{{'PAGES.HOME.order.title' | translate}}:</label>
+                <select class="form-control custom-select ml-md-2" [(ngModel)]="sortOptionSelected"
+                    (ngModelChange)="onSelectOrderOption($event)" id="sortingSelect">
+                    <option selected value="default">{{'PAGES.HOME.order.options.default' | translate}}</option>
+                    <option value="lower">{{'PAGES.HOME.order.options.lower' | translate}}</option>
+                    <option value="highest">{{'PAGES.HOME.order.options.higher' | translate}}</option>
+                    <option value="popular">{{'PAGES.HOME.order.options.best' | translate}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12">
+            <div class="form-group">
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="{{'PAGES.HOME.search-bar' | translate}}"
+                    [(ngModel)]="searchString" (ngModelChange)="onSearchProduct($event)">
+            </div>
+
+        </div>
+        <div class="col-lg-1 col-md-12 col-sm-12">
+            <div class="form-group">
+                <button class="btn btn-danger" (click)="resetAllFilterOptions()">{{'PAGES.HOME.reset-btn' | translate}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-4 products-container">
+    <div class="row ">
+        <app-product-card *ngFor="let product of ($products | async)" [product]="product" [isMainPage]="true"
+            class="col-lg-4 col-md-6 col-sm-12 mb-3 fade-in"></app-product-card>
+            <div *ngIf="($products | async)?.length == 0">{{'PAGES.HOME.no-records' | translate}}</div>
+    </div>
+</div>

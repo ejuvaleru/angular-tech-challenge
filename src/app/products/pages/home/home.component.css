@@ -1,0 +1,13 @@
+.products-container{
+    min-height: 100vh;
+}
+
+.custom-select{
+    width: 35%;
+}
+
+@media (max-width: 768px) {
+    .custom-select{
+        width: 100%;
+    }
+  }
