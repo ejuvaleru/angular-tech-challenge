@@ -19,7 +19,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 | Dummy Header and Footer                             |    ✅    |
 
 ## Review the app
-You can take a look at the app in this [link]()
+You can take a look at the app in this [link](https://amasohn-challenge.web.app/)
 
 ## Development server
 
