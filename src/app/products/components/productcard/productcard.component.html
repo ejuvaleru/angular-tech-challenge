@@ -8,6 +8,18 @@
                 {{'COMPONENTS.PRODUCT-CART.more-btn' | translate}}</a>
             <a *ngIf="!isMainPage" class="btn btn-primary"
                 [routerLink]="['/', 'product', product.id]">{{'COMPONENTS.PRODUCT-CART.more-btn' | translate}}</a>
+            <div class="row">
+                <div class="col-6 text-center" *ngIf="product.isInternational">
+
+                    <span>🌎</span>
+
+                </div>
+                <div class="col-6 text-center" *ngIf="product.isTopSales">
+
+                    <span>📈</span>
+
+                </div>
+            </div>
         </div>
     </div>
 </ng-container>

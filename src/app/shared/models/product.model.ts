@@ -5,6 +5,8 @@ export interface Product {
     description: string;
     category:    Category;
     image:       string;
+    isTopSales: boolean;
+    isInternational: boolean;
 }
 
 export enum Category {

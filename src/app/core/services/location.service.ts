@@ -12,7 +12,7 @@ export class LocationService {
   $defaultLocation = new BehaviorSubject<string>('United States');
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
   ) {
     this.getUserLocation();
   }
@@ -26,8 +26,6 @@ export class LocationService {
           response.then(country => {
             this.$userLocation.next(country);
           });
-        } else {
-          this.$userLocation = this.$defaultLocation;
         }
       },
         (err) => {

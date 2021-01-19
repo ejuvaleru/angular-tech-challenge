@@ -25,8 +25,8 @@ export class DetailsComponent implements OnInit {
       this.productId = params.get('id');
 
       if (this.productId) {
-        this.productService.getProductById(this.productId).subscribe((product: Product) => {
-          this.productData = product;
+        this.productService.getProductById(Number(this.productId)).subscribe((products: Product[]) => {
+          this.productData = products[0];
           this.$productsLikeThis = this.productService.getProductsByCategory(this.productData.category, true)
         });
       }

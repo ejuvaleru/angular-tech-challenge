@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  products_api: 'https://fakestoreapi.com',
+  products_api: 'https://run.mocky.io/v3/2e604518-c7ea-4900-b69e-d5b09c9d2f58',
   geocoding: {
     api_key: 'b750f485b47fbc5ffba8510ac800942d',
     url: 'http://api.positionstack.com/v1/reverse'

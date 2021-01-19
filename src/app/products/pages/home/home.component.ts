@@ -15,7 +15,6 @@ import { Product } from 'src/app/shared/models/product.model';
 export class HomeComponent implements OnInit {
 
   $products: Observable<Product[]>;
-  userCountry = '';
 
   // Order by price filter
   sortOptionSelected: string;
@@ -28,11 +27,18 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
+    private locationService: LocationService
   ) { }
 
   ngOnInit(): void {
     this.$products = this.productService.getAllProducts();
-
+    this.locationService.$defaultLocation.subscribe(dLocation => {
+      if (localStorage.getItem('defaultLocation') != 'United States') {
+        this.$products = this.productService.getInternationalProducts();
+      } else {
+        this.$products = this.productService.getAllProductsApi();
+      }
+    })
     this.sortOptionSelected = localStorage.getItem('sortOption') || SortOptions.DEFAULT;
     this.categoryOptionSelected = localStorage.getItem('categoryOption') || 'all';
     this.searchString = localStorage.getItem('search') || '';
@@ -53,11 +59,18 @@ export class HomeComponent implements OnInit {
 
   // Order the products by their price
   filterProducts(sortOption: String) {
-    this.$products = this.$products.pipe(map(products => {
-      if (sortOption === SortOptions.LOWER) return products.sort((a, b) => a.price - b.price);
-      else if (sortOption === SortOptions.HIGHEST) return products.sort((a, b) => b.price - a.price);
-      else return products;
-    }));
+    if (sortOption != SortOptions.DEFAULT) {
+      this.$products = this.$products.pipe(map(products => {
+        if (sortOption === SortOptions.LOWER) return products.sort((a, b) => a.price - b.price);
+        else if (sortOption === SortOptions.HIGHEST) return products.sort((a, b) => b.price - a.price);
+        else if (sortOption === SortOptions.POPULAR) return products.filter(p => p.isTopSales === true);
+        else {
+          return [];
+        };
+      }));
+    } else {
+      this.$products = this.productService.$products;
+    }
   }
 
   onSelectOrderOption(newOption: string) {
@@ -83,7 +96,6 @@ export class HomeComponent implements OnInit {
     this.categoryOptionSelected = newOption;
     if (this.categoryOptionSelected != 'all') {
       this.$products = this.productService.getProductsByCategory(this.categoryOptionSelected);
-      this.filterProducts(this.sortOptionSelected)
     }
     else {
       this.resetAllFilterOptions();

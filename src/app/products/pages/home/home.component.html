@@ -1,5 +1,5 @@
 <div class="container py-4 filter-container">
-    <h3>{{'PAGES.HOME.filter-title' | translate}}</h3>
+    <h4>{{'PAGES.HOME.filter-title' | translate}}</h4>
 
     <div class="row">
         <div class="col-lg-8 col-md-12 col-sm-12">
@@ -25,14 +25,16 @@
         </div>
         <div class="col-lg-3 col-md-12 col-sm-12">
             <div class="form-group">
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="{{'PAGES.HOME.search-bar' | translate}}"
-                    [(ngModel)]="searchString" (ngModelChange)="onSearchProduct($event)">
+                <input type="text" class="form-control" id="exampleInputEmail1"
+                    placeholder="{{'PAGES.HOME.search-bar' | translate}}" [(ngModel)]="searchString"
+                    (ngModelChange)="onSearchProduct($event)">
             </div>
 
         </div>
         <div class="col-lg-1 col-md-12 col-sm-12">
             <div class="form-group">
-                <button class="btn btn-danger" (click)="resetAllFilterOptions()">{{'PAGES.HOME.reset-btn' | translate}}</button>
+                <button class="btn btn-danger" (click)="resetAllFilterOptions()">{{'PAGES.HOME.reset-btn' |
+                    translate}}</button>
             </div>
         </div>
     </div>
@@ -42,6 +44,6 @@
     <div class="row ">
         <app-product-card *ngFor="let product of ($products | async)" [product]="product" [isMainPage]="true"
             class="col-lg-4 col-md-6 col-sm-12 mb-3 fade-in"></app-product-card>
-            <div *ngIf="($products | async)?.length == 0">{{'PAGES.HOME.no-records' | translate}}</div>
+        <div *ngIf="($products | async)?.length == 0">{{'PAGES.HOME.no-records' | translate}}</div>
     </div>
 </div>
